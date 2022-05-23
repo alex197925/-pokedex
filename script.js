@@ -11,4 +11,25 @@ async function pokemonInfo () {
     let data = await fetch(`${api_url}${input}`)
     let res = await data.json();
     console.log(res)
+
+
+
+    let name = document.getElementById("pokemon-name");
+    name.innerText = res.name;
+
+    let move = document.getElementById("moves");
+    move.innerText = `${res.moves[1].move.name}, ${res.moves[2].move.name}, ${res.moves[3].move.name}, ${res.moves[4].move.name}`;
+
+
+     let id = document.getElementById("id");
+     id.innerText = res.id;
+
+
+    let pokemonImage = new Image;
+    pokemonImage.src = res.sprites.back_default;
+     document.getElementById("pokemon-img").append(pokemonImage);
+
 }
+
+
+
