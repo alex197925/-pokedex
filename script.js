@@ -25,9 +25,21 @@ async function pokemonInfo () {
      id.innerText = res.id;
 
 
-    let pokemonImage = new Image;
-    pokemonImage.src = res.sprites.back_default;
-     document.getElementById("pokemon-img").append(pokemonImage);
+    // let pokemonImage = new Image;
+    // pokemonImage.src = res.sprites.back_default;
+    //  document.getElementById("pokemon-img").append(pokemonImage);
+
+
+    function AddImage(){
+        const imageCont = document.getElementById("pokemon-img")
+        let pokeImg = new Image();
+        pokeImg.src = res.sprites.back_default;
+        imageCont.innerHTML = '';
+        imageCont.appendChild(pokeImg);
+    }
+
+    AddImage()
+
 
 }
 
