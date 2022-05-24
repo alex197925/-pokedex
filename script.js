@@ -10,24 +10,20 @@ async function pokemonInfo () {
 
     let data = await fetch(`${api_url}${input}`)
     let res = await data.json();
-    console.log(res)
+    let moves = res.moves;
+    // console.log(res.moves[0].move.name)
+    // console.log(moves);
 
 
 
     let name = document.getElementById("pokemon-name");
     name.innerText = res.name;
 
-    let move = document.getElementById("moves");
-    move.innerText = `${res.moves[1].move.name}, ${res.moves[2].move.name}, ${res.moves[3].move.name}, ${res.moves[4].move.name}`;
+   .await
 
 
      let id = document.getElementById("id");
      id.innerText = res.id;
-
-
-    // let pokemonImage = new Image;
-    // pokemonImage.src = res.sprites.back_default;
-    //  document.getElementById("pokemon-img").append(pokemonImage);
 
 
     function AddImage(){
@@ -39,6 +35,19 @@ async function pokemonInfo () {
     }
 
     AddImage()
+
+function addMove() {
+    // console.log(moves);
+    for (let i = 0; i < moves.length; i++){
+        let allMoves = document.getElementById("moves");
+        allMoves.innerHTML = moves[i].move.name;
+        console.log(allMoves)
+
+    }
+
+}
+
+addMove()
 
 
 }
