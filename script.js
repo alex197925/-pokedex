@@ -10,7 +10,7 @@ async function pokemonInfo () {
 
     let data = await fetch(`${api_url}${input}`)
     let res = await data.json();
-    let moves = res.moves;
+    // let moves = res.moves;
     // console.log(res.moves[0].move.name)
     // console.log(moves);
 
@@ -30,19 +30,21 @@ async function pokemonInfo () {
     function AddImage(){
         const imageCont = document.getElementById("pokemon-img")
         let pokeImg = new Image();
-        pokeImg.src = res.sprites.back_default;
+        pokeImg.src = res.sprites.other.home.front_default;
         imageCont.innerHTML = '';
         imageCont.appendChild(pokeImg);
     }
 
     AddImage()
 
+
+
 function addMove() {
-    // console.log(moves);
-    for (let i = 0; i < moves.length; i++){
-        let allMoves = document.getElementById("moves");
-        allMoves.innerHTML = moves[i].move.name;
-        console.log(allMoves)
+        let moves = [];
+    for (let i = 0; i < 4; i++){
+        document.getElementById("moves");
+        moves.push(res.moves[i].move.name);
+        console.log(moves);
 
     }
 

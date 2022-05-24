@@ -6,8 +6,10 @@ img {
 body {
     margin: 0;
     padding: 0;
-    background: rgb(2,0,36);
-    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(222,212,167,1) 0%, rgba(0,212,255,1) 96%);
+    /*background: rgb(2,0,36);*/
+    /*background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(222,212,167,1) 0%, rgba(0,212,255,1) 96%);*/
+    background: rgb(34,193,195);
+    background: linear-gradient(0deg, rgba(34,193,195,1) 63%, rgba(253,187,45,1) 100%);
     font-family: 'IBM Plex Sans KR', sans-serif;
     font-family: 'IBM Plex Sans Thai', sans-serif;
 }
@@ -44,7 +46,7 @@ button {
 }
 
 button:hover {
-    background: #22c1c3;
+    background: #2d8788;
     color: aliceblue;
 }
 
