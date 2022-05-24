@@ -19,7 +19,8 @@ async function pokemonInfo () {
     let name = document.getElementById("pokemon-name");
     name.innerText = res.name;
 
-   .await
+    let move = document.getElementById("moves");
+    move.innerText = `${res.moves[1].move.name}, ${res.moves[2].move.name}, ${res.moves[3].move.name}, ${res.moves[4].move.name}`;
 
 
      let id = document.getElementById("id");
