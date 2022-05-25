@@ -7,12 +7,53 @@ async function pokemonInfo () {
     let input = pokeInfo;
 
 
-
     let data = await fetch(`${api_url}${input}`)
     let res = await data.json();
-    // let moves = res.moves;
-    // console.log(res.moves[0].move.name)
-    // console.log(moves);
+
+
+    //Evolution
+    let evoData = await fetch(res.species.url);
+    let evoRes = await evoData.json();
+
+
+    let chainData = await fetch(evoRes.evolution_chain.url);
+    let chainRes = await chainData.json()
+    // console.log(chainRes);
+
+
+
+     function displayEvolution () {
+          let evolvesTo1 = chainRes.chain.evolves_to[0].evolves_to[0].species.name;
+          document.getElementById("evolution1").innerHTML = evolvesTo1;
+          let evolvesTo2 = chainRes.chain.evolves_to[0].species.name;
+         document.getElementById("evolution2").innerHTML = evolvesTo2;
+        let evolvesTo3 = chainRes.chain.species.name;
+         document.getElementById("evolution3").innerHTML = evolvesTo3;
+
+         console.log(evolvesTo1);
+         console.log(evolvesTo2);
+         console.log(evolvesTo3);
+   }
+
+
+
+displayEvolution()
+
+    // evolution_details
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -44,7 +85,7 @@ function addMove() {
     for (let i = 0; i < 4; i++){
         document.getElementById("moves");
         moves.push(res.moves[i].move.name);
-        console.log(moves);
+        // console.log(moves);
 
     }
 
